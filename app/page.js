@@ -1,11 +1,9 @@
-import Link from 'next/link';
-
 export default function Home() {
   return (
-    <>
-      <p>
-        <Link href="/about">link</Link>
-      </p>
-    </>
+    <main>
+      <h1 style={{ color: 'white', textAlign: 'center' }}>
+        Time to get started!
+      </h1>
+    </main>
   );
 }
