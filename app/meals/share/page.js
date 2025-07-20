@@ -1,7 +1,8 @@
 import classes from './page.module.css';
-import ImagePicker from '@/component/meals/image-picker';`
+import ImagePicker from '@/component/meals/image-picker';
+
 import { shareMeal } from '@/libs/actions';
-`
+import MealsFormSubmit from '../meals-form-submit';
 export default function ShareMealPage() {
   return (
     <>
@@ -16,11 +17,11 @@ export default function ShareMealPage() {
           <div className={classes.row}>
             <p>
               <label htmlFor="name">Your name</label>
-              <input type="text" id="name" name="name" required />
+              <input type="text" id="name" name="name" />
             </p>
             <p>
               <label htmlFor="email">Your email</label>
-              <input type="email" id="email" name="email" required />
+              <input type="email" id="email" name="email" />
             </p>
           </div>
           <p>
@@ -37,7 +38,7 @@ export default function ShareMealPage() {
           </p>
           <ImagePicker label="Your Image" name="image" />
           <p className={classes.actions}>
-            <button type="submit">Share Meal</button>
+            <MealsFormSubmit />
           </p>
         </form>
       </main>
