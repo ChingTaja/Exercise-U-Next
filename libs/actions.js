@@ -5,7 +5,7 @@ import { saveMeal } from './meals';
 function isInvalidText(text) {
   return !text || text.trim() === '';
 }
-export async function shareMeal(formData) {
+export async function shareMeal(preState ,formData) {
   const meal = {
     title: formData.get('title'),
     summary: formData.get('summary'),
@@ -24,7 +24,9 @@ export async function shareMeal(formData) {
     !meal.creator_email.includes('@') ||
     meal.image.size === 0
   ) {
-    throw new Error('Invalid input');
+    return {
+      message: 'Invalid input'
+    }
   }
   await saveMeal(meal);
   redirect('/meals');
